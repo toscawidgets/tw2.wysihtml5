@@ -1,6 +1,13 @@
 import tw2.core as twc
 import tw2.forms as twf
 
+try:
+    import tw2.bootstrap as twb
+    TextArea = twb.TextArea
+except ImportError:
+    twb = None
+    TextArea = twf.TextArea
+
 wysihtml5_js = twc.JSLink(
     filename='static/wysihtml5-0.3.0.js')
 wysihtml5_parser_simple = twc.JSLink(
@@ -9,7 +16,7 @@ wysihtml5_parser_advanced = twc.JSLink(
     filename='static/advanced.js')
 
 
-class Wysihtml5(twf.TextArea):
+class Wysihtml5(TextArea):
     template = "mako:tw2.wysihtml5.templates.wysihtml5"
 
     resources = [
@@ -24,8 +31,8 @@ class Wysihtml5(twf.TextArea):
 
     @classmethod
     def post_define(cls):
-        pass
-        # put custom initialisation code here
+        if twb:
+            cls.template = "mako:tw2.wysihtml5.templates.wysihtml5-bootstrap"
 
     def prepare(self):
         super(Wysihtml5, self).prepare()
