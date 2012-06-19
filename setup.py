@@ -1,14 +1,16 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='',
-    version='',
-    description='',
-    author='',
-    author_email='',
-    url='',
+    name='tw2.wysihtml5',
+    version='0.1',
+    description='WYSIHTML5 widget for ToscaWidgets2',
+    author='Moritz Schlarb',
+    author_email='mail@moritz-schlarb.de',
+    url='https://github.com/moschlar/tw2.wysihtml5',
     install_requires=[
         "tw2.core",
+        "tw2.forms",
+        "Mako",
         ## Add other requirements here
         # "Genshi",
         ],

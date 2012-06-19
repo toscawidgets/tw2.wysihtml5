@@ -11,4 +11,4 @@ import widgets
 class DemoWysihtml5(widgets.Wysihtml5):
     # Provide default parameters, value, etc... here
     # default = <some-default-value>
-    pass
+    parser_rules = widgets.wysihtml5_parser_advanced
