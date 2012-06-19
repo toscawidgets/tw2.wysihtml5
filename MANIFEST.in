@@ -1,0 +1,2 @@
+recursive-include tw2/wysihtml5/templates *
+recursive-include tw2/wysihtml5/static *
