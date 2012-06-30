@@ -6,7 +6,7 @@ setup(
     description='WYSIHTML5 widget for ToscaWidgets2',
     author='Moritz Schlarb',
     author_email='mail@moritz-schlarb.de',
-    url='https://github.com/moschlar/tw2.wysihtml5',
+    url='https://github.com/toscawidgets/tw2.wysihtml5',
     install_requires=[
         "tw2.core",
         "tw2.forms",
@@ -28,7 +28,7 @@ setup(
         'toscawidgets.widgets',
     ],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha',
         'Environment :: Web Environment',
         'Environment :: Web Environment :: ToscaWidgets',
         'Topic :: Software Development :: Libraries :: Python Modules',
