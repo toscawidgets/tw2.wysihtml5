@@ -15,20 +15,20 @@ setup(
         # "Genshi",
         ],
     packages=find_packages(exclude=['ez_setup', 'tests']),
-    namespace_packages = ['tw2'],
+    namespace_packages=['tw2'],
     zip_safe=False,
     include_package_data=True,
-    test_suite = 'nose.collector',
+    test_suite='nose.collector',
     entry_points="""
         [tw2.widgets]
         # Register your widgets so they can be listed in the WidgetBrowser
         widgets = tw2.wysihtml5
     """,
-    keywords = [
+    keywords=[
         'toscawidgets.widgets',
     ],
-    classifiers = [
-        'Development Status :: 3 - Alpha',
+    classifiers=[
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Environment :: Web Environment :: ToscaWidgets',
         'Topic :: Software Development :: Libraries :: Python Modules',
