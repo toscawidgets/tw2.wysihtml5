@@ -17,6 +17,8 @@ wysihtml5_parser_simple = twc.JSLink(
     filename='static/simple.js')
 wysihtml5_parser_advanced = twc.JSLink(
     filename='static/advanced.js')
+parsers = dict(simple=wysihtml5_parser_simple,
+    advanced=wysihtml5_parser_advanced)
 
 
 class Wysihtml5(TextArea):
@@ -26,9 +28,13 @@ class Wysihtml5(TextArea):
         wysihtml5_js
     ]
 
-    parser_rules = twc.Param(
-        'The set of parser rules to use. Has to be a twc.JSLink.',
-        default=wysihtml5_parser_simple)
+    parser = twc.Param(
+        'The set of parser rules to use. '
+        'The simple parser contains only basic html5 tags, while the '
+        'advanced parser contains more html5 tags and preserves some '
+        'css classes. If you use the simple parser, the editor css is '
+        'not strictly needed.',
+        default='advanced')
     toolbar_id = twc.Variable(
         default='wysihtml5-toolbar')
 
@@ -42,7 +48,7 @@ class Wysihtml5(TextArea):
         if not hasattr(self, 'id') or 'id' not in self.attrs:
             raise ValueError('WYSIHTML5 must be supplied an id')
 
-        self.resources.append(self.parser_rules)
+        self.resources.append(parsers[self.parser])
         self.toolbar_id = self.compound_id + '-toolbar'
         self.resources.append(twc.JSSource(src="""
 var editor = new wysihtml5.Editor("%s", {
