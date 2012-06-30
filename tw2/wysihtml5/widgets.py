@@ -10,6 +10,9 @@ except ImportError:
 
 wysihtml5_js = twc.JSLink(
     filename='static/wysihtml5-0.3.0.js')
+wysihtml5_editor_css = twc.CSSLink(
+    filename='static/editor.css')
+
 wysihtml5_parser_simple = twc.JSLink(
     filename='static/simple.js')
 wysihtml5_parser_advanced = twc.JSLink(
@@ -42,5 +45,10 @@ class Wysihtml5(TextArea):
         self.resources.append(self.parser_rules)
         self.toolbar_id = self.compound_id + '-toolbar'
         self.resources.append(twc.JSSource(src="""
-var editor = new wysihtml5.Editor("%s", { toolbar:  "%s", parserRules:  wysihtml5ParserRules });
-""" % (self.compound_id, self.toolbar_id)))
+var editor = new wysihtml5.Editor("%s", {
+    toolbar:  "%s",
+    parserRules:  wysihtml5ParserRules,
+    stylesheets: ["/resources/%s/%s"]
+});
+""" % (self.compound_id, self.toolbar_id,
+        wysihtml5_editor_css.guess_modname(), wysihtml5_editor_css.filename)))
