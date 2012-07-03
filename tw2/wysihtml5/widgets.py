@@ -2,7 +2,7 @@ import tw2.core as twc
 import tw2.forms as twf
 
 try:
-    import tw2.bootstrap as twb
+    import tw2.bootstrap.forms as twb
     TextArea = twb.TextArea
 except ImportError:
     twb = None
