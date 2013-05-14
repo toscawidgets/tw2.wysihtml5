@@ -7,14 +7,17 @@ __all__ = [
 ]
 
 wysihtml5_js = twc.JSLink(
-    filename='static/wysihtml5-0.3.0.js')
+    filename='static/wysihtml5-0.3.0.js',
+    location='headbottom')
 wysihtml5_editor_css = twc.CSSLink(
     filename='static/editor.css')
 
 wysihtml5_parser_simple = twc.JSLink(
-    filename='static/simple.js')
+    filename='static/simple.js',
+    location='headbottom')
 wysihtml5_parser_advanced = twc.JSLink(
-    filename='static/advanced.js')
+    filename='static/advanced.js',
+    location='headbottom')
 parsers = dict(simple=wysihtml5_parser_simple,
     advanced=wysihtml5_parser_advanced)
 

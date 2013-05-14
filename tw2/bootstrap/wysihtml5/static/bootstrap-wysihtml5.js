@@ -1,0 +1,1 @@
+bootstrap-wysihtml5/src/bootstrap-wysihtml5.js
