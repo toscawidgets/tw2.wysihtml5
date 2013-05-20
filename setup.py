@@ -5,7 +5,7 @@ setup(
     version='0.3',
     description='WYSIHTML5 widget for ToscaWidgets2',
     author='Moritz Schlarb',
-    author_email='mail@moritz-schlarb.de',
+    author_email='moschlar@metalabs.de',
     url='https://github.com/toscawidgets/tw2.wysihtml5',
     install_requires=[
         "tw2.core",
