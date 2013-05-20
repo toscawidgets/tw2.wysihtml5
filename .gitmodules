@@ -1,6 +1,6 @@
-[submodule "tw2/bootstrap/wysihtml5/static/bootstrap-wysihtml5"]
-	path = tw2/bootstrap/wysihtml5/static/bootstrap-wysihtml5
+[submodule "lib/bootstrap-wysihtml5"]
+	path = lib/bootstrap-wysihtml5
 	url = https://github.com/jhollingworth/bootstrap-wysihtml5.git
-[submodule "tw2/wysihtml5/static/wysihtml5"]
-	path = tw2/wysihtml5/static/wysihtml5
+[submodule "lib/wysihtml5"]
+	path = lib/wysihtml5
 	url = https://github.com/xing/wysihtml5.git

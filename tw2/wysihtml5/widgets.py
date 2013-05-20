@@ -7,7 +7,7 @@ __all__ = [
 ]
 
 wysihtml5_js = twc.JSLink(
-    filename='static/wysihtml5-0.3.0.js',
+    filename='static/wysihtml5.js',
     location='headbottom')
 wysihtml5_editor_css = twc.CSSLink(
     filename='static/editor.css')
