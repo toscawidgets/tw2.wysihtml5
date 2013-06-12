@@ -1,27 +1,28 @@
 import tw2.core as twc
 import tw2.forms as twf
 
-try:
-    import tw2.bootstrap.forms as twb
-    TextArea = twb.TextArea
-except ImportError:
-    twb = None
-    TextArea = twf.TextArea
+
+__all__ = [
+    'Wysihtml5'
+]
 
 wysihtml5_js = twc.JSLink(
-    filename='static/wysihtml5-0.3.0.js')
+    filename='static/wysihtml5.js',
+    location='headbottom')
 wysihtml5_editor_css = twc.CSSLink(
     filename='static/editor.css')
 
 wysihtml5_parser_simple = twc.JSLink(
-    filename='static/simple.js')
+    filename='static/simple.js',
+    location='headbottom')
 wysihtml5_parser_advanced = twc.JSLink(
-    filename='static/advanced.js')
+    filename='static/advanced.js',
+    location='headbottom')
 parsers = dict(simple=wysihtml5_parser_simple,
     advanced=wysihtml5_parser_advanced)
 
 
-class Wysihtml5(TextArea):
+class Wysihtml5(twf.TextArea):
     template = "mako:tw2.wysihtml5.templates.wysihtml5"
 
     resources = [
@@ -37,11 +38,6 @@ class Wysihtml5(TextArea):
         default='advanced')
     toolbar_id = twc.Variable(
         default='wysihtml5-toolbar')
-
-    @classmethod
-    def post_define(cls):
-        if twb:
-            cls.template = "mako:tw2.wysihtml5.templates.wysihtml5-bootstrap"
 
     def prepare(self):
         super(Wysihtml5, self).prepare()

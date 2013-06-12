@@ -1,2 +1,3 @@
 recursive-include tw2/wysihtml5/templates *
 recursive-include tw2/wysihtml5/static *
+recursive-include tw2/bootstrap/wysihtml5/static *
