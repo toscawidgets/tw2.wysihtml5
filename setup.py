@@ -7,6 +7,7 @@ setup(
     author='Moritz Schlarb',
     author_email='moschlar@metalabs.de',
     url='https://github.com/toscawidgets/tw2.wysihtml5',
+    license='BSD 2-clause',
     install_requires=[
         "tw2.core",
         "tw2.forms",
@@ -30,7 +31,7 @@ setup(
         'toscawidgets.widgets',
     ],
     classifiers=[
-        'Development Status :: 3 - Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
         'Environment :: Web Environment :: ToscaWidgets',
         'Topic :: Software Development :: Libraries :: Python Modules',
@@ -38,5 +39,6 @@ setup(
         'Intended Audience :: Developers',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        'License :: OSI Approved :: BSD License',
     ],
 )
