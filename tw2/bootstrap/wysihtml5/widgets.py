@@ -26,8 +26,14 @@ bootstrap_wysihtml5_css = twc.CSSLink(
 class Wysihtml5(twbf.TextArea):
     resources = [bootstrap_wysihtml5_js, bootstrap_wysihtml5_css]
 
+    # TODO: Color support
+    # Explicitly disable stylesheets, because wysiwyg-color.css is fetched otherwise
+    stylesheets = twc.Param(default=list())
     wysihtml5_args = twc.Param(default=dict())
 
     def prepare(self):
         super(Wysihtml5, self).prepare()
-        self.add_call(twj.jQuery(self.selector).wysihtml5(self.wysihtml5_args))
+        self.add_call(twj.jQuery(self.selector).wysihtml5(dict(
+            stylesheets=self.stylesheets,
+            **self.wysihtml5_args
+        )))
