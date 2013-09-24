@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='tw2.wysihtml5',
-    version='0.3',
+    version='0.3.1',
     description='WYSIHTML5 widget for ToscaWidgets2',
     author='Moritz Schlarb',
     author_email='moschlar@metalabs.de',
